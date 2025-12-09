@@ -1,0 +1,37 @@
+
+#type: args
+
+train:
+  epochs: 400
+  batch_size: 128
+  lr: 1.0e-3
+
+diffusion:
+  layers: 4 
+  channels: 128
+  nheads: 8
+  diffusion_embedding_dim: 64
+  beta_start: 0.0001
+  beta_end: 0.01
+  num_steps: 1000
+  schedule: "quad"
+  dropout: 0.05
+  activation: 'gelu'
+  seq_length: 128
+  freq_select: 5
+
+model:
+  is_unconditional: True
+  timeemb: 128
+  featureemb: 0
+  target_strategy: "random"
+
+graph:
+  graph_conv_type: "graph_conv"
+  channel_in: 64
+  channel_out: 32
+  Ks: 3
+
+Fourtier:
+  modes: 64
+  mode_select_method: 'random'
